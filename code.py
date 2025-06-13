@@ -347,11 +347,11 @@ class OTFSChannelEstimator:
         # Direct LS estimation at pilot positions
         pilot_channel_est = np.zeros(n_total, dtype=complex)
         
-        for i, pos in enumerate(pilot_pos):# H  = Y/X
+        for i, pos in enumerate(pilot_pos):# H  = Y/X 理想情况如果在导频位置的
             if i < len(pilot_syms) and np.abs(pilot_syms[i]) > 1e-6:
                 pilot_channel_est[pos] = Y_flat[pos] / pilot_syms[i]
         
-        # Interpolation based on OTFS channel structure
+        # Interpolation based on OTFS channel structure 插值
         for pos in range(n_total):
             if pos not in pilot_pos:
                 pos_delay = pos % self.M
@@ -382,7 +382,7 @@ class OTFSChannelEstimator:
                     estimates = np.array(estimates)
                     pilot_channel_est[pos] = np.sum(weights * estimates) / np.sum(weights)
         
-        # Create channel matrix with dominant diagonal structure
+        # Create channel matrix with dominant diagonal structure    还原
         for i in range(n_total):
             for j in range(n_total):
                 i_delay = i % self.M
@@ -432,7 +432,7 @@ class OTFSChannelEstimator:
         
         return H_mmse
     
-    def build_dnn_model_sparse(self, input_dim, max_taps=20):#网络都是最简单
+    def build_dnn_model_sparse(self, input_dim, max_taps=20):#网络都是最简单的全连接网络
         """sparse channel estimation"""
         # Output: complex taps (real + imag parts) + position indices
         output_dim = max_taps * 3  # real, imag, position_index
