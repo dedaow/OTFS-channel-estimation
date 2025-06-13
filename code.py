@@ -347,7 +347,7 @@ class OTFSChannelEstimator:
         # Direct LS estimation at pilot positions
         pilot_channel_est = np.zeros(n_total, dtype=complex)
         
-        for i, pos in enumerate(pilot_pos):
+        for i, pos in enumerate(pilot_pos):# H  = Y/X
             if i < len(pilot_syms) and np.abs(pilot_syms[i]) > 1e-6:
                 pilot_channel_est[pos] = Y_flat[pos] / pilot_syms[i]
         
@@ -426,7 +426,7 @@ class OTFSChannelEstimator:
         noise_cov = sigma_w_2 * np.eye(n_total)
         
         try:
-            H_mmse = R_hh @ np.linalg.solve(R_hh + noise_cov, H_ls)
+            H_mmse = R_hh @ np.linalg.solve(R_hh + noise_cov, H_ls)# H_mmse = R_hh * (R_hh + σ²I)^(-1) * H_ls
         except np.linalg.LinAlgError:
             H_mmse = H_ls
         
