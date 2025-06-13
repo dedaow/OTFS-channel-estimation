@@ -61,12 +61,12 @@ class OTFSChannelEstimator:
         """Validate implementation correctness"""#组合代码防止报错
         print("=== please please  ===")
         
-        # Check permutation matrix properties
+        # Check permutation matrix properties 检查上一步的p矩阵是不是正交变化的（不改变能量）
         P = self.create_permutation_matrix()
         is_unitary = np.allclose(P @ P.conj().T, np.eye(self.N * self.M), atol=1e-10)
         print(f"P is unitary (P*P' = I): {is_unitary}")
         
-        #  Check modulation-demodulation consistency (no channel)
+        #  Check modulation-demodulation consistency (no channel) #没有使用信道 仅查看下调制解调后差别
         X_test = np.random.randn(self.M, self.N) + 1j * np.random.randn(self.M, self.N)
         s, x_orig = self.otfs_modulation(X_test)
         Y_recovered, y_recovered = self.otfs_demodulation(s)
