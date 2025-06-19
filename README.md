@@ -1,1 +1,3 @@
-# OTFS-channel-estimation![屏幕截图 2025-06-16 151328](https://github.com/user-attachments/assets/7ec307f0-55eb-415f-bd06-81620c5fb425)
+# OTFS-channel-estimation
+本仓库记录初学者对OTFS的学习过程，是笔者参考论文，网络资源后编写的代码。
+大致是想完成一个从生成数据，调制解调，模型训练以及评估全过程的完整仿真，代码中出现的问题还请各位指出！顺祝时祺！
