@@ -3,8 +3,8 @@
 
 ---
 ## 快速运行
-```bash
-python example.py
+```bash python example.py
+
 ---
 
 ## 可视化结果示例
