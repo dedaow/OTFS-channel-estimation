@@ -4,17 +4,17 @@
 ---
 ## 快速运行
 python example.py
+运行示例脚本 `example.py`：
 
+```bash
+python example.py
 ---
 
 ## 可视化结果示例
 ![屏幕截图 2025-06-19 220527](https://github.com/user-attachments/assets/614efeee-d128-4b50-a246-8c31dd1bfe1b)
 ### 信道对比图
 ![屏幕截图 2025-06-19 220519](https://github.com/user-attachments/assets/af0648f5-5496-46f0-a79d-4e0c2b68bca7)
-![信道对比图](https://github.com/user-attachments/assets/614efeee-d128-4b50-a246-8c31dd1bfe1b)
-
 ### 导频图示例
-![导频放置](https://github.com/user-attachments/assets/24adc83c-ad78-4eae-9993-74cfe7370482)
 ![屏幕截图 2025-06-19 220806](https://github.com/user-attachments/assets/24adc83c-ad78-4eae-9993-74cfe7370482)
 ---
 
