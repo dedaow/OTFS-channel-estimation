@@ -3,7 +3,7 @@
 
 ---
 ## 快速运行
-```bash python example.py
+python example.py
 
 ---
 
